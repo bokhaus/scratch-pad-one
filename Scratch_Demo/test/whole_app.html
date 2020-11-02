@@ -78,7 +78,7 @@ body {
 </div>
 <div class="promo-container" style="display:none;">
   <div class="promo-code"></div>
-  <a href="htttps://tyro365.com" target="_blank" class="btn">Register Now</a>
+  <a href="https://tyro365.com" target="_blank" class="btn">Register Now</a>
 </div>
  
  
@@ -92,7 +92,8 @@ var bg1 = '../static/img/10.jpg';
 var bg2 = '../static/img/20.jpg';
 var bg3 = '../static/img/30.jpg';
 var bg4 = '../static/img/sorry.png';
-var bgArray= [ bg1, bg2, bg3, bg4 ],
+var bg5 = '../static/img/freeT.jpg';
+var bgArray= [ bg1, bg2, bg3, bg4, bg5 ],
 selectBG = bgArray[Math.floor(Math.random() * bgArray.length)];
 if (selectBG == bg1) {
     promoCode = 'SCRATCH15';
@@ -102,6 +103,8 @@ if (selectBG == bg1) {
     var promoCode = 'SCRATCH30';
   }else if (selectBG == bg4) {
     var promoCode = 'SCRATCHFreeTee';
+  }else if (selectBG == bg5) {
+    var promoCode = 'Sorry, Not a winner today.';
   }
 $('#promo').wScratchPad({
     // the size of the eraser
