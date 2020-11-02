@@ -7,7 +7,6 @@
   
   <title>Scratch Card</title>
   <style type="text/css">
-
 html {
   box-sizing: border-box;
 }
@@ -76,10 +75,9 @@ body {
 <div class="scratch-container">
   <div id="promo" class="scratchpad"></div>
 </div>
-<div class="promo-container" style="display:none;"> 
-  <!-- style="display:none;" -->
+<div class="promo-container" style="display:none;">
   <div class="promo-code"></div>
-  <a href="https://tyro365.com" target="_blank" class="btn">Order Now!</a>
+  <a href="htttp://jennamolby.com" target="_blank" class="btn">Register Now</a>
 </div>
  
  
@@ -90,26 +88,20 @@ body {
  
 var promoCode = '';
 var bg1 = '../static/img/10.jpg';
-var bg2 = '../static/img/20.jpg';
-var bg3 = '../static/img/30.jpg';
-var bg4 = '../static/img/sorry.png';
-var bg5 = '../static/img/freeT.jpg';
-var bgArray= [ bg1, bg2, bg3, bg4, bg5 ],
+var bg2 = 'https://jennamolby.com/scratch-and-win/images/500.png';
+var bg3 = 'https://jennamolby.com/scratch-and-win/images/sorry.png';
+var bgArray= [ bg1, bg2, bg3 ],
 selectBG = bgArray[Math.floor(Math.random() * bgArray.length)];
 if (selectBG == bg1) {
-    promoCode = 'SCRATCH15';
-} else if (selectBG == bg2) {
-  promoCode = 'SCRATCH20';
-} else if (selectBG == bg3) {
-  var promoCode = 'SCRATCH30';
-} else if (selectBG == bg4) {
-  var promoCode = 'SCRATCHFreeTee';
-} else if (selectBG == bg5) {
-  var promoCode = 'Sorry, Not a winner today.';
-}
+    promoCode = 'SCRATCH400';
+  } else if (selectBG == bg2) {
+    promoCode = 'SCRATCH500';
+  } if (selectBG == bg3) {
+    var promoCode = '';
+  }
 $('#promo').wScratchPad({
     // the size of the eraser
-    size        : 60,    
+    size        : 70,    
     // the randomized scratch image   
     bg:  selectBG,
     // give real-time updates
