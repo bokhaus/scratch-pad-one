@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,16 +32,17 @@ body {
   user-select: none;
   width:100%;
 }
-@media only screen and (max-width : 480px) {
-  .scratchpad {width:400px;height:396px;}
-  .scratch-container {width:400px !important;}
-}
- 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
-  .scratchpad {width:290px;height:287px;}
-  .scratch-container {width:290px !important;}
-}
+  /* Extra Small Devices, Phones */ 
+          @media only screen and (max-width : 480px) {
+            .scratchpad {width:400px;height:396px;}
+            .scratch-container {width:400px !important;}
+          }
+
+          /* Custom, iPhone Retina */ 
+          @media only screen and (max-width : 320px) {
+            .scratchpad {width:290px;height:287px;}
+            .scratch-container {width:290px !important;}
+          }
 .promo-container {
 	background:#FFF;
 	border-radius:5px;
@@ -69,55 +71,68 @@ body {
   -webkit-border-radiuss:3px;
 }
   </style>
- 
+
 </head>
 <body>
 <div class="scratch-container">
-  <div id="promo" class="scratchpad"></div>
+<div id="promo" class="scratchpad"></div>
 </div>
 <div class="promo-container" style="display:none;">
   <div class="promo-code"></div>
-  <a href="htttp://jennamolby.com" target="_blank" class="btn">Register Now</a>
+  <a href="https://tyro365.com" target="_blank" class="btn">Register Now</a>
 </div>
- 
- 
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://jennamolby.com/scratch-and-win/js/wScratchPad.min.js"></script>
- 
+
+
+<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="//jennamolby.com/scratch-and-win/js/wScratchPad.min.js"></script>
+
 <script type="text/javascript">
- 
+
 var promoCode = '';
-var bg1 = '../static/img/10.jpg';
+var bg1 = '../static/img/15.jpg';
 var bg2 = '../static/img/20.jpg';
 var bg3 = '../static/img/30.jpg';
-var bg4 = '../static/img/sorry.png';
-var bg5 = '../static/img/freeT.jpg';
+var bg4 = '../static/img/freeT.jpg';
+var bg5 = '../static/img/sorry.png';
+
 var bgArray= [ bg1, bg2, bg3, bg4, bg5 ],
-// Added message
-var bg2 = 'https://jennamolby.com/scratch-and-win/images/500.png';
-var bg3 = 'https://jennamolby.com/scratch-and-win/images/sorry.png';
-var bgArray= [ bg1, bg2, bg3 ],selectBG = bgArray[Math.floor(Math.random() * bgArray.length)];
-if (selectBG == bg1) {
-    promoCode = 'SCRATCH400';
-  } else if (selectBG == bg2) {
-    promoCode = 'SCRATCH500';
-  } if (selectBG == bg3) {
-    var promoCode = '';
-  }
+selectBG = bgArray[Math.floor(Math.random() * bgArray.length)];
+
+// if (selectBG == bg1) {
+//     promoCode = 'SCRATCH400';
+//   } else if (selectBG == bg2) {
+//     promoCode = 'SCRATCH500';
+//   } if (selectBG == bg3) {
+//     var promoCode = '';
+//   }
+
+switch (selectBG){
+  case bg1:
+    promoCode = "Scratch15";
+    break;
+  case bg2:
+    promoCode = "Scratch20";
+    break;
+  case bg3: 
+    promoCode = "Scratch30";
+    break;
+  case bg4: 
+    promoCode = "ScratchFreeTee";
+    break;
+  case bg5: 
+    promoCode = "Sorry not a winner today";
+    break;
+}
+
+
 $('#promo').wScratchPad({
-    // the size of the eraser
-    size        : 70,    
-    // the randomized scratch image   
+    size        : 70,       
     bg:  selectBG,
-    // give real-time updates
     realtime    : true, 
-    // The overlay image
-    fg: 'https://jennamolby.com/scratch-and-win/images/overlay.png',
-    // The cursor (coin) image
-    'cursor': 'url("https://jennamolby.com/scratch-and-win/images/coin1.png") 5 5, default',
-    
+    fg: '../static/img/overlay.png',
+    'cursor': 'url("../static/img/coin1.png") 5 5, default',
+
     scratchMove: function (e, percent) {
-        // Show the plain-text promo code and call-to-action when the scratch area is 50% scratched
         if ((percent > 50) && (promoCode != '')) {
           $('.promo-container').show();
           $('body').removeClass('not-selectable');
@@ -127,6 +142,6 @@ $('#promo').wScratchPad({
  });
 </script>
       
- 
+
 </body>
 </html>
