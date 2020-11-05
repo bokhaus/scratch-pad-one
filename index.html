@@ -89,11 +89,11 @@ body {
 <script type="text/javascript">
 
 var promoCode = '';
-var bg1 = '../static/img/15.jpg';
-var bg2 = '../static/img/20.jpg';
-var bg3 = '../static/img/30.jpg';
-var bg4 = '../static/img/freeT.jpg';
-var bg5 = '../static/img/sorry.png';
+var bg1 = './static/img/15.jpg';
+var bg2 = './static/img/20.jpg';
+var bg3 = './static/img/30.jpg';
+var bg4 = './static/img/freeT.jpg';
+var bg5 = './static/img/sorry.png';
 
 var bgArray= [ bg1, bg2, bg3, bg4, bg5 ],
 selectBG = bgArray[Math.floor(Math.random() * bgArray.length)];
@@ -120,7 +120,7 @@ switch (selectBG){
     promoCode = "ScratchFreeTee";
     break;
   case bg5: 
-    promoCode = "Sorry not a winner today";
+    promoCode = "Sorry, not a winner today.";
     break;
 }
 
@@ -129,8 +129,8 @@ $('#promo').wScratchPad({
     size        : 70,       
     bg:  selectBG,
     realtime    : true, 
-    fg: '../static/img/overlay.png',
-    'cursor': 'url("../static/img/coin1.png") 5 5, default',
+    fg: './static/img/overlay.png',
+    'cursor': 'url("./static/img/coin1.png") 5 5, default',
 
     scratchMove: function (e, percent) {
         if ((percent > 50) && (promoCode != '')) {
